@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="card-product">
+    <%= image_tag "http://source.unsplash.com/featured/?#{@pet.species}>&#{rand(1000)}" %>
+    <div class="card-product-infos">
+      <h2><%= @pet.name %></h2>
+      <p><%= @pet.species %></p>
+      <p><%= @pet.address %></p>
+      <p>Found <%= pluralize(@pet.found_days_ago, 'day') %> ago</p>
+      <p><%= link_to 'x', pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: 'Remove pet?'}  %></p>
+    </div>
+  </div>
+</div>

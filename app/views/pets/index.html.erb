@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <h1>Found Pets</h1>
+  <div class="cards">
+    <% @pets.each do |pet| %>
+      <div class="card-product">
+        <%= image_tag "http://source.unsplash.com/featured/?#{pet.species}>&#{rand(1000)}" %>
+        <div class="card-product-infos">
+          <h2><%= pet.name %></h2>
+          <p><%= pet.species %></p>
+          <p>Found <%= pluralize(pet.found_days_ago, 'day') %> ago</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
